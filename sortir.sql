@@ -150,9 +150,7 @@ INSERT INTO `participant` (`id`, `campus_id`, `nom`, `prenom`, `telephone`, `pas
 (20, 7, 'Vigote', 'Sarah', '02.42.12.65.87', '$argon2id$v=19$m=65536,t=4,p=1$azVrRkF3VFY0emdPQlpPSA$rCYHcSd9TUk3CUrE1OKpUULnmdU8MtTRONYENe4uJqk', 0, 1, 'svigote', 'svigote@campus-quimper.com', NULL),
 (21, 6, 'Dicule', 'Terry', NULL, '$argon2id$v=19$m=65536,t=4,p=1$azVrRkF3VFY0emdPQlpPSA$rCYHcSd9TUk3CUrE1OKpUULnmdU8MtTRONYENe4uJqk', 0, 1, 'tdicule', 'tdicule@campus-rennes.com', NULL),
 (22, 5, 'Égérie', 'Tom', NULL, '$argon2id$v=19$m=65536,t=4,p=1$azVrRkF3VFY0emdPQlpPSA$rCYHcSd9TUk3CUrE1OKpUULnmdU8MtTRONYENe4uJqk', 0, 1, 'tegerie', 'tegerie@campus-nantes.com', NULL),
-(23, 8, 'Bourdin', 'Camille', NULL, '$argon2id$v=19$m=65536,t=4,p=1$M3ZvQS4yYjRQcy5rVmZ0Rw$LBgnwEWHGUjEHGmjO6fANNWN8XHgf42pn1kho3dEUpQ', 1, 1, 'cbourdin', 'cbourdin@campus-enligne.com', 8),
-(24, 8, 'Papèra', 'Aurélie', NULL, '$argon2id$v=19$m=65536,t=4,p=1$azVrRkF3VFY0emdPQlpPSA$rCYHcSd9TUk3CUrE1OKpUULnmdU8MtTRONYENe4uJqk', 1, 1, 'apapera', 'apapera@campus-enligne.com', NULL),
-(25, 8, 'Wayne', 'Bruce', NULL, '$argon2id$v=19$m=65536,t=4,p=1$T1B1OHVZUFJ1eTJ0NG9JVw$/KE+owuR+ur2u5teXANnczrCKzI9ESXIY9wN5ReXy4k', 0, 1, 'Batman', 'bwayne@campus-enligne.com', 9);
+(23, 8, 'Wayne', 'Bruce', NULL, '$argon2id$v=19$m=65536,t=4,p=1$T1B1OHVZUFJ1eTJ0NG9JVw$/KE+owuR+ur2u5teXANnczrCKzI9ESXIY9wN5ReXy4k', 0, 1, 'Batman', 'bwayne@campus-enligne.com', 9);
 
 -- --------------------------------------------------------
 
