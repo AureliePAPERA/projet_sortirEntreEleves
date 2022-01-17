@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %}Sortir.com{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap">
+        <link rel="icon" href="{{ asset('img/favicon3.png') }}">
+    </head>
+    <body>
+    <div class="container">
+        <header>
+            <a class="site-title" href="{{ path('home_home') }}" title="Sortir">
+                <img src="{{ asset('img/logo.png') }}" alt="Sortir">
+            </a>
+            <nav>
+                <ul>
+                    {% if is_granted('ROLE_USER') %}
+                        <li><a href="#" title="Sortir | Déconnexion">Se déconnecter</a></li>
+                        <li><a href="#" title="Sortir | Profil">Mon profil</a></li>
+                        <li><a href="{{ path('home_home') }}" title="Sortir | Accueil">Accueil</a></li>
+                    {% elseif is_granted('ROLE_ADMIN') %}
+                        <li><a href="#" title="Sortir | Déconnexion">Se déconnecter</a></li>
+                        <li><a href="#" title="Sortir | Profil">Mon profil</a></li>
+                        <li><a href="{{ path('home_home') }}" title="Sortir | Accueil">Accueil</a></li>
+                        <li><a href="#" title="Sortir | Campus">Campus</a></li>
+                        <li><a href="#" title="Sortir | Villes">Villes</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="flashes">
+                {% for label, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="flash flash-{{ label }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+            {% block main %}{% endblock %}
+        </main>
+        <footer>
+            &copy; Aurélie & Camille - {{ "now"|date("Y") }}
+        </footer>
+    </div>
+    </body>
+</html>

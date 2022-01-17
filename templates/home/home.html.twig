@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} | Accueil {% endblock %}
+
+{% block main %}
+    <p>Date du jour : {{ 'now' | date('d/m/Y') }}</p>
+    <p>Participant(e) : </p>
+
+    <table>
+        <tr>
+            <td>Nom de la sortie</td>
+            <td>Date de la sortie</td>
+            <td>Clôture</td>
+            <td>Inscrits/places</td>
+            <td>État</td>
+            <td>Inscrit</td>
+            <td>Organisateur</td>
+            <td>Actions</td>
+        </tr>
+        {% for sortie in sorties %}
+        <tr>
+            <td>{{ sortie.nom }}</td>
+            <td>{{ sortie.dateHeureDebut | date('d/m/Y') }}</td>
+            <td>{{ sortie.dateLimiteInscription | date('d/m/Y') }}</td>
+            <td>{{ sortie.nbInscriptionsMax }}</td>
+            <td>Faire jointure</td>
+            <td>Faire jointure</td>
+            <td>Faire jointure</td>
+            <td>Actions</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

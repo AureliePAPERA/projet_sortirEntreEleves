@@ -1,0 +1,21 @@
+public function getUser($credentials, UserProviderInterface $userProvider)
+{
+    $token = new CsrfToken('authenticate', $credentials['csrf_token']);
+    if (!$this->csrfTokenManager->isTokenValid($token)) {
+        throw new InvalidCsrfTokenException();
+    }
+    if (stristr($credentials['identity'], '@')) {
+        $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $credentials['identity']]);
+        if (!$user) {
+            // fail authentication with a custom error
+            throw new CustomUserMessageAuthenticationException('Email non trouvé !');
+        }
+    } else {
+        $user = $this->entityManager->getRepository(User::class)->findOneBy(['username' => $credentials['identity']]);
+        if (!$user) {
+            // fail authentication with a custom error
+            throw new CustomUserMessageAuthenticationException('Pseudo non trouvé !');
+        }
+    }
+    return $user;
+}

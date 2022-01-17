@@ -1,0 +1,32 @@
+security:
+
+    providers:
+        our_db_provider:
+            entity:
+                class: App\Entity\Participant
+                property: pseudo
+
+    firewalls:
+        main:
+            pattern: ^/
+            provider: our_db_provider
+            anonymous: ~
+            form_login:
+                login_path: /
+                check_path: login
+                default_target_path: /accueil
+            logout:
+                path: logout
+                target: login
+
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+    encoders:
+        App\Entity\Participant:
+            algorithm: auto
+
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/profile, roles: ROLE_USER }
